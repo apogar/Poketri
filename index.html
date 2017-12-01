@@ -17,9 +17,9 @@
     </form>
     <section id="affichage"></section>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://poketri.vespera.ovh/socket.io/socket.io.js"></script>
     <script>
-    var socket = io.connect('http://localhost:1423');
+    var socket = io.connect('https://poketri.vespera.ovh/:1423');
     $('#tri').submit(function () {
         socket.emit('message', true);            
         return false;
