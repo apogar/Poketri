@@ -13,6 +13,7 @@ io.sockets.on('connection', function (socket) {
 		var tri = new Array();
 		tri = tirage(6);
 		socket.emit('message', tri);
+		socket.broadcast.emit('message', tri);
 	}); 
 });
 
@@ -35,4 +36,5 @@ function randsort(){
 	return (Math.random()*2 & 1)?-1:1;
 }
 
-server.listen(8080);
+console.log("serveur run:1423");
+server.listen(1423);
