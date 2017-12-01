@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Poke</title>
+    <style>
+    #affichage strong {
+        color: white;
+        background-color: black;
+        padding: 2px;
+    }
+    </style>
+</head>
+<body>
+    <form action="/" method="post" id="tri">
+        <input type="submit" name="message" id="message" size="50" value="C'est l'heure du duel !" />
+    </form>
+    <section id="affichage"></section>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+    var socket = io.connect('http://localhost:8080');
+    $('#tri').submit(function () {
+        socket.emit('message', true);            
+        return false;
+    });
+    socket.on('message', function(data) {
+        insereMessage(data)
+    })
+    function insereMessage(message) {
+        document.getElementById('affichage').innerHTML = message+'<br/>';
+    }
+    </script>
+</body>
+</html>
