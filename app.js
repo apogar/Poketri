@@ -8,6 +8,14 @@ app.get('/', function (req, res) {
 	res.sendfile(__dirname + '/index.html');
 });
 
+
+app.get('/jquery', function (req, res) {
+        res.sendfile(__dirname + '/jquery-1.10.1.min.js');
+});
+
+
+
+
 io.sockets.on('connection', function (socket) {
 	socket.on('message', function (message) {
 		var tri = new Array();

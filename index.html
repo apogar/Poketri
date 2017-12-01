@@ -12,15 +12,16 @@
     </style>
 </head>
 <body>
-    <form action="/" method="post" id="tri">
-        <input type="submit" name="message" id="message" size="50" value="C'est l'heure du duel !" />
-    </form>
+  
+        <div id="tri">C'est l'heure du duel !" <div/>
+    
     <section id="affichage"></section>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://poketri.vespera.ovh/jquery"></script>
     <script src="https://poketri.vespera.ovh/socket.io/socket.io.js"></script>
     <script>
-    var socket = io.connect('https://poketri.vespera.ovh/:1423');
-    $('#tri').submit(function () {
+    var socket = io.connect('http://vespera.ovh:1423');
+
+    $('#tri').click(function () {
         socket.emit('message', true);            
         return false;
     });
@@ -28,6 +29,7 @@
         insereMessage(data)
     })
     function insereMessage(message) {
+	console.log('message');
         document.getElementById('affichage').innerHTML = message+'<br/>';
     }
     </script>
