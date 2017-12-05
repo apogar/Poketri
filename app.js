@@ -19,17 +19,17 @@ app.get('/jquery', function (req, res) {
 io.sockets.on('connection', function (socket) {
 	socket.on('message', function (message) {
 		var tri = new Array();
-		tri = tirage(6);
+		tri = draw(9);
 		socket.emit('message', tri);
 		socket.broadcast.emit('message', tri);
 	}); 
 });
 
 
-function tirage(n){
-	var type = ['feu', 'eau', 'plante','normal','vol','combat',
-	'tenebre','psy','fee','spectre','dragon','glace',
-	'insecte','poison','acier','roche','sol','electrique'
+function draw(n){
+	var type = ['fire', 'water', 'grass','normal','flying','fighting',
+	'dark','psychic','fairy','gosht','dragon','ice',
+	'bug','poison','steel','rock','ground','eclec'
 	];
 	var liste = new Array();
 	for (i=0;i<n;i++){

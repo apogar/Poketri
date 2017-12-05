@@ -2,24 +2,37 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Poke</title>
-    <style>
-    #affichage strong {
-        color: white;
-        background-color: black;
-        padding: 2px;
-    }
-    </style>
+    <title>Poketri</title>
+    <link rel="stylesheet" href="//127.0.0.1/PokeChat/css/styles.css">
 </head>
 <body>
-  
-        <div id="tri">C'est l'heure du duel !" <div/>
-    
-    <section id="affichage"></section>
-    <script src="https://poketri.vespera.ovh/jquery"></script>
-    <script src="https://poketri.vespera.ovh/socket.io/socket.io.js"></script>
+    <button id="tri">C'est l'heure du duel !</button>
+    <ul id="row-type-1" class="type">
+        <li id="type1"></li>
+        <li id="type2"></li>
+        <li id="type3"></li>
+    </ul>
+    <ul id="row-type-2" class="type">
+        <li id="type4"></li>
+        <li id="type5"></li>
+        <li id="type6"></li>
+    </ul>   
+    <ul id="row-type-3" class="type">
+        <li id="type7"></li>
+        <li id="type8"></li>
+        <li id="type9"></li>
+    </ul>
+
+    <!--<script src="https://poketri.vespera.ovh/jquery"></script>
+    <script src="https://poketri.vespera.ovh/socket.io/socket.io.js"></script>-->
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script>
-    var socket = io.connect('http://vespera.ovh:1423');
+    //var socket = io.connect('http://vespera.ovh:1423');
+    var socket = io.connect('http://localhost:1423');
+    document.getElementById('row-type-1').style.visibility = 'hidden'; 
+    document.getElementById('row-type-2').style.visibility = 'hidden'; 
+    document.getElementById('row-type-3').style.visibility = 'hidden'; 
 
     $('#tri').click(function () {
         socket.emit('message', true);            
@@ -29,8 +42,19 @@
         insereMessage(data)
     })
     function insereMessage(message) {
-	console.log('message');
-        document.getElementById('affichage').innerHTML = message+'<br/>';
+	    console.log(message);
+        document.getElementById('row-type-1').style.visibility = 'visible'; 
+        document.getElementById('row-type-2').style.visibility = 'visible'; 
+        document.getElementById('row-type-3').style.visibility = 'visible'; 
+        document.getElementById('type1').className = message[0];
+        document.getElementById('type2').className = message[1];
+        document.getElementById('type3').className = message[2];
+        document.getElementById('type4').className = message[3];
+        document.getElementById('type5').className = message[4];
+        document.getElementById('type6').className = message[5];
+        document.getElementById('type7').className = message[6];
+        document.getElementById('type8').className = message[7];
+        document.getElementById('type9').className = message[8];
     }
     </script>
 </body>

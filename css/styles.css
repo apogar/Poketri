@@ -1,0 +1,37 @@
+/**** Sprites ****/
+.type li
+{
+	width: 120px;
+	height: 144px;
+	display: inline-block;
+	background: url("../img/type.png") no-repeat;
+}
+
+
+.type .bug  { background-position: left top; }
+.type .dark { background-position: 20% top; }
+.type .dragon { background-position: 40% top; }
+.type .elec { background-position: 60% top; }
+.type .fairy { background-position: 80% top; }
+.type .fighting { background-position: right top; }
+
+.type .fire { background-position: left 50%; }
+.type .flying { background-position: 20% 50%; }
+.type .gosht { background-position: 40% 50%; }
+.type .grass { background-position: 60% 50%; }
+.type .ground { background-position: 80% 50%; }
+.type .ice { background-position: right 50%; }
+
+.type .normal { background-position: left 100%; }
+.type .poison { background-position: 20% 100%; }
+.type .psychic { background-position: 40% 100%; }
+.type .rock { background-position: 60% 100%; }
+.type .steel { background-position: 80% 100%; }
+.type .water { background-position: right 100%; }
+
+/**** CSS Pages ****/
+#affichage strong {
+    color: white;
+    background-color: black;
+    padding: 2px;
+}
