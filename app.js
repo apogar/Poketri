@@ -32,7 +32,7 @@ io.sockets.on('connection', function (socket) {
 function draw(n){
 	var type = ['fire', 'water', 'grass','normal','flying','fighting',
 	'dark','psychic','fairy','gosht','dragon','ice',
-	'bug','poison','steel','rock','ground','eclec'
+	'bug','poison','steel','rock','ground','elec'
 	];
 	var liste = new Array();
 	for (i=0;i<n;i++){

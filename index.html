@@ -30,12 +30,10 @@
     <script>
     var socket = io.connect('http://vespera.ovh:1423');
     //var socket = io.connect('http://localhost:1423');
-    document.getElementById('row-type-1').style.visibility = 'hidden'; 
-    document.getElementById('row-type-2').style.visibility = 'hidden'; 
-    document.getElementById('row-type-3').style.visibility = 'hidden'; 
+
 
     $('#tri').click(function () {
-        socket.emit('message', true);            
+        socket.emit('message', true);     
         return false;
     });
     socket.on('message', function(data) {
@@ -43,18 +41,15 @@
     })
     function insereMessage(message) {
 	    console.log(message);
-        document.getElementById('row-type-1').style.visibility = 'visible'; 
-        document.getElementById('row-type-2').style.visibility = 'visible'; 
-        document.getElementById('row-type-3').style.visibility = 'visible'; 
-        document.getElementById('type1').className = message[0];
-        document.getElementById('type2').className = message[1];
-        document.getElementById('type3').className = message[2];
-        document.getElementById('type4').className = message[3];
-        document.getElementById('type5').className = message[4];
-        document.getElementById('type6').className = message[5];
-        document.getElementById('type7').className = message[6];
-        document.getElementById('type8').className = message[7];
-        document.getElementById('type9').className = message[8];
+        setTimeout(function() { document.getElementById('type1').className = message[0]; }, 200); 
+        setTimeout(function() { document.getElementById('type2').className = message[1]; }, 400); 
+        setTimeout(function() { document.getElementById('type3').className = message[2]; }, 600); 
+        setTimeout(function() { document.getElementById('type4').className = message[3]; }, 800); 
+        setTimeout(function() { document.getElementById('type5').className = message[4]; }, 1000); 
+        setTimeout(function() { document.getElementById('type6').className = message[5]; }, 1200); 
+        setTimeout(function() { document.getElementById('type7').className = message[6]; }, 1400); 
+        setTimeout(function() { document.getElementById('type8').className = message[7]; }, 1600); 
+        setTimeout(function() { document.getElementById('type9').className = message[8]; }, 1800); 
     }
     </script>
 </body>
