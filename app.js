@@ -1,18 +1,21 @@
 var app = require('express')(),
+express = require('express'),
 server = require('http').createServer(app),
 io = require('socket.io').listen(server),
 ent = require('ent'),
 fs = require('fs');
 
+var path = require('path');
+
 app.get('/', function (req, res) {
 	res.sendfile(__dirname + '/index.html');
 });
-
 
 app.get('/jquery', function (req, res) {
         res.sendfile(__dirname + '/jquery-1.10.1.min.js');
 });
 
+app.use(express.static(path.join(__dirname, '/public')));
 
 
 
