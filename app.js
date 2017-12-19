@@ -21,10 +21,31 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 io.sockets.on('connection', function (socket) {
 	socket.on('message', function (message) {
-		var tri = new Array();
-		tri = draw(9);
-		socket.emit('message', tri);
-		socket.broadcast.emit('message', tri);
+		switch (message){
+			case 'tri6':
+				console.log("tri6");
+				var tri = new Array();
+				tri = draw(6);
+				socket.emit('message', tri);
+				socket.broadcast.emit('message', tri);
+				break;
+			case 'tri9':
+				console.log("tri9");
+				var tri = new Array();
+				tri = draw(9);
+				socket.emit('message', tri);
+				socket.broadcast.emit('message', tri);
+				break;
+			case '2v2':
+				console.log("2v2");
+				var tri = new Array();
+				tri = draw(2);
+				socket.emit('message', tri);
+				socket.broadcast.emit('message', tri);
+				break;
+			case default:
+				console.log("erreur");
+		}
 	}); 
 });
 

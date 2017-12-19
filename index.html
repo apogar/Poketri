@@ -6,8 +6,14 @@
     <title>Poketri</title>
 </head>
 <body>
-    <button id="tri">C'est l'heure du duel !</button>
-    <ul id="row-type-1" class="type">
+    <ul id="navbar">
+      <li><a class="active" id="tri6" href="">Triage 6</a></li>
+      <li><a class="" id="tri9" href="">Triage 9</a></li>
+      <li><a class="active" id="2v2" href="">2V2</a></li>
+  </ul>
+
+  <div class="poketriage">
+      <ul id="row-type-1" class="type">
         <li id="type1"></li>
         <li id="type2"></li>
         <li id="type3"></li>
@@ -22,6 +28,7 @@
         <li id="type8"></li>
         <li id="type9"></li>
     </ul>
+</div>
 
     <script src="https://poketri.vespera.ovh/jquery"></script>
     <script src="https://poketri.vespera.ovh/socket.io/socket.io.js"></script>
@@ -32,25 +39,49 @@
     //var socket = io.connect('http://localhost:1423');
 
 
-    $('#tri').click(function () {
-        socket.emit('message', true);     
+    $('#tri6').click(function () {
+        clearMessage();
+        socket.emit('message', 'tri6');     
+        return false;
+    });    
+    $('#tri9').click(function () {
+        clearMessage();
+        socket.emit('message', 'tri9');     
+        return false;
+    });
+    $('#2v2').click(function () {
+        clearMessage();
+        socket.emit('message', '2v2');     
         return false;
     });
     socket.on('message', function(data) {
-        insereMessage(data)
+        insereMessage(data);
     })
+
     function insereMessage(message) {
-	    console.log(message);
-        setTimeout(function() { document.getElementById('type1').className = message[0]; }, 200); 
-        setTimeout(function() { document.getElementById('type2').className = message[1]; }, 400); 
-        setTimeout(function() { document.getElementById('type3').className = message[2]; }, 600); 
-        setTimeout(function() { document.getElementById('type4').className = message[3]; }, 800); 
-        setTimeout(function() { document.getElementById('type5').className = message[4]; }, 1000); 
-        setTimeout(function() { document.getElementById('type6').className = message[5]; }, 1200); 
-        setTimeout(function() { document.getElementById('type7').className = message[6]; }, 1400); 
-        setTimeout(function() { document.getElementById('type8').className = message[7]; }, 1600); 
-        setTimeout(function() { document.getElementById('type9').className = message[8]; }, 1800); 
-    }
-    </script>
+       console.log(message);
+       setTimeout(function() { document.getElementById('type1').className = message[0]; }, 200); 
+       setTimeout(function() { document.getElementById('type2').className = message[1]; }, 400); 
+       setTimeout(function() { document.getElementById('type3').className = message[2]; }, 600); 
+       setTimeout(function() { document.getElementById('type4').className = message[3]; }, 800); 
+       setTimeout(function() { document.getElementById('type5').className = message[4]; }, 1000); 
+       setTimeout(function() { document.getElementById('type6').className = message[5]; }, 1200); 
+       setTimeout(function() { document.getElementById('type7').className = message[6]; }, 1400); 
+       setTimeout(function() { document.getElementById('type8').className = message[7]; }, 1600); 
+       setTimeout(function() { document.getElementById('type9').className = message[8]; }, 1800); 
+   }
+
+       function clearMessage() {
+       document.getElementById('type1').className = '';
+       document.getElementById('type2').className = '';
+       document.getElementById('type3').className = '';
+       document.getElementById('type4').className = '';
+       document.getElementById('type5').className = '';
+       document.getElementById('type6').className = '';
+       document.getElementById('type7').className = '';
+       document.getElementById('type8').className = '';
+       document.getElementById('type9').className = '';
+   }
+   </script>
 </body>
 </html>

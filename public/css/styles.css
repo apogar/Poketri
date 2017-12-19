@@ -9,30 +9,148 @@
 }
 
 
-.type .bug  { background-position: left top; visibility: visible; }
-.type .dark { background-position: 20% top;  visibility: visible; }
-.type .dragon { background-position: 40% top; visibility: visible;  }
-.type .elec { background-position: 60% top;  visibility: visible;  }
-.type .fairy { background-position: 80% top; visibility: visible;  }
-.type .fighting { background-position: right top; visibility: visible;  }
+.type .bug  { background-position: left top; visibility: visible;	
+	-webkit-animation:spin 1s linear ;
+	-moz-animation:spin 1s linear ;
+	animation:spin 1s linear ; 
+}
+.type .dark { background-position: 20% top;  visibility: visible;
+	-webkit-animation:spin 1s linear ;
+	-moz-animation:spin 1s linear ;
+	animation:spin 1s linear ; 
+}
+.type .dragon { background-position: 40% top; visibility: visible;
+	-webkit-animation:spin 1s linear ;
+	-moz-animation:spin 1s linear ;
+	animation:spin 1s linear ;
+}
+.type .elec { background-position: 60% top;  visibility: visible;
+	-webkit-animation:spin 1s linear ;
+	-moz-animation:spin 1s linear ;
+	animation:spin 1s linear ;
+}
+.type .fairy { background-position: 80% top; visibility: visible; 
+	-webkit-animation:spin 1s linear ;
+	-moz-animation:spin 1s linear ;
+	animation:spin 1s linear ; 
+}
+.type .fighting { background-position: right top; visibility: visible; 
+	-webkit-animation:spin 1s linear ;
+	-moz-animation:spin 1s linear ;
+	animation:spin 1s linear ;
+}
 
-.type .fire { background-position: left 50%; visibility: visible;  }
-.type .flying { background-position: 20% 50%; visibility: visible;  }
-.type .gosht { background-position: 40% 50%; visibility: visible;  }
-.type .grass { background-position: 60% 50%; visibility: visible;  }
-.type .ground { background-position: 80% 50%; visibility: visible;  }
-.type .ice { background-position: right 50%; visibility: visible;  }
+.type .fire { background-position: left 50%; visibility: visible; 
+	-webkit-animation:spin 1s linear ;
+	-moz-animation:spin 1s linear ;
+	animation:spin 1s linear ; 
+}
+.type .flying { background-position: 20% 50%; visibility: visible; 
+	-webkit-animation:spin 1s linear ;
+	-moz-animation:spin 1s linear ;
+	animation:spin 1s linear ;
+}
+.type .gosht { background-position: 40% 50%; visibility: visible; 
+	-webkit-animation:spin 1s linear ;
+	-moz-animation:spin 1s linear ;
+	animation:spin 1s linear ;
+}
+.type .grass { background-position: 60% 50%; visibility: visible;
+	-webkit-animation:spin 1s linear ;
+	-moz-animation:spin 1s linear ;
+	animation:spin 1s linear ; 
+}
+.type .ground { background-position: 80% 50%; visibility: visible;
+	-webkit-animation:spin 1s linear ;
+	-moz-animation:spin 1s linear ;
+	animation:spin 1s linear ; 
+}
+.type .ice { background-position: right 50%; visibility: visible; 
+	-webkit-animation:spin 1s linear ;
+	-moz-animation:spin 1s linear ;
+	animation:spin 1s linear ; 
+}
 
-.type .normal { background-position: left 100%; visibility: visible;  }
-.type .poison { background-position: 20% 100%; visibility: visible;  }
-.type .psychic { background-position: 40% 100%; visibility: visible;  }
-.type .rock { background-position: 60% 100%; visibility: visible;  }
-.type .steel { background-position: 80% 100%; visibility: visible;  }
-.type .water { background-position: right 100%; visibility: visible;  }
+.type .normal { background-position: left 100%; visibility: visible; 
+	-webkit-animation:spin 1s linear ;
+	-moz-animation:spin 1s linear ;
+	animation:spin 1s linear ;
+}
+.type .poison { background-position: 20% 100%; visibility: visible; 	
+	-webkit-animation:spin 1s linear ;
+	-moz-animation:spin 1s linear ;
+	animation:spin 1s linear ;
+}
+.type .psychic { background-position: 40% 100%; visibility: visible; 
+	-webkit-animation:spin 1s linear ;
+	-moz-animation:spin 1s linear ;
+	animation:spin 1s linear ;
+}
+.type .rock { background-position: 60% 100%; visibility: visible; 
+	-webkit-animation:spin 1s linear ;
+	-moz-animation:spin 1s linear ;
+	animation:spin 1s linear ;
+}
+.type .steel { background-position: 80% 100%; visibility: visible; 
+	-webkit-animation:spin 1s linear ;
+	-moz-animation:spin 1s linear ;
+	animation:spin 1s linear ; 
+}
+.type .water { background-position: right 100%; visibility: visible; 
+	-webkit-animation:spin 1s linear ;
+	-moz-animation:spin 1s linear ;
+	animation:spin 1s linear ;
+}
+
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(1080deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(1080deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(1080deg); transform:rotate(1080deg); } }
+
 
 /**** CSS Pages ****/
 #affichage strong {
+	color: white;
+	background-color: black;
+	padding: 2px;
+}
+
+.poketriage{
+	margin-left:25%;
+	padding:1px 16px;
+
+}
+
+
+/**** navbar ***/
+body {
+    margin: 0;
+}
+
+#navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+#navbar li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+#navbar li a.active {
+    background-color: #4CAF50;
     color: white;
-    background-color: black;
-    padding: 2px;
+}
+
+#navbar li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
 }
