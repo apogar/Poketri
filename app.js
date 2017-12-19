@@ -43,7 +43,7 @@ io.sockets.on('connection', function (socket) {
 				socket.emit('message', tri);
 				socket.broadcast.emit('message', tri);
 				break;
-			case default:
+			default:
 				console.log("erreur");
 		}
 	}); 
